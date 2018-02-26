@@ -23,6 +23,9 @@ class Application
       search_term = req.params["item"]
       if @@items.include?(search_term)
         @@cart < search_term
+        resp.write('Added to cart')
+      else
+        resp.write('Error')
       end
     else
       resp.write "Path Not Found"
